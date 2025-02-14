@@ -52,14 +52,14 @@ export const transferProps = buildProps({
    */
   titles: {
     type: definePropType<[string, string]>(Array),
-    default: () => [],
+    default: () => [] as unknown as [string, string],
   },
   /**
    * @description custom button texts
    */
   buttonTexts: {
     type: definePropType<[string, string]>(Array),
-    default: () => [],
+    default: () => [] as unknown as [string, string],
   },
   /**
    * @description placeholder for the filter input
@@ -116,12 +116,11 @@ export const transferProps = buildProps({
    */
   props: {
     type: definePropType<TransferPropsAlias>(Object),
-    default: () =>
-      mutable({
-        label: 'label',
-        key: 'key',
-        disabled: 'disabled',
-      } as const),
+    default: () => ({
+      label: 'label',
+      key: 'key',
+      disabled: 'disabled',
+    }),
   },
   /**
    * @description order strategy for elements in the target list. If set to `original`, the elements will keep the same order as the data source. If set to `push`, the newly added elements will be pushed to the bottom. If set to `unshift`, the newly added elements will be inserted on the top
@@ -138,7 +137,7 @@ export const transferProps = buildProps({
     type: Boolean,
     default: true,
   },
-} as const)
+})
 export type TransferProps = ExtractPropTypes<typeof transferProps>
 
 export const transferCheckedChangeFn = (

@@ -106,7 +106,7 @@ export const inputNumberProps = buildProps({
     default: true,
   },
   ...useAriaProps(['ariaLabel']),
-} as const)
+})
 export type InputNumberProps = ExtractPropTypes<typeof inputNumberProps>
 
 export const inputNumberEmits = {

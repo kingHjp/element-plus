@@ -145,7 +145,7 @@ export const rateProps = buildProps({
    */
   clearable: Boolean,
   ...useAriaProps(['ariaLabel']),
-} as const)
+})
 
 export type RateProps = ExtractPropTypes<typeof rateProps>
 

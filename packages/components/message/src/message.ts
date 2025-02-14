@@ -151,7 +151,7 @@ export const messageProps = buildProps({
     type: Number,
     default: messageDefaults.repeatNum,
   },
-} as const)
+})
 export type MessageProps = ExtractPropTypes<typeof messageProps>
 
 export const messageEmits = {

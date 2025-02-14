@@ -161,7 +161,7 @@ export const menuProps = buildProps({
     type: Number,
     default: 300,
   },
-} as const)
+})
 export type MenuProps = ExtractPropTypes<typeof menuProps>
 
 const checkIndexPath = (indexPath: unknown): indexPath is string[] =>

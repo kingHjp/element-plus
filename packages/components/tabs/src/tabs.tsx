@@ -78,7 +78,7 @@ export const tabsProps = buildProps({
    * @description whether width of tab automatically fits its container
    */
   stretch: Boolean,
-} as const)
+})
 export type TabsProps = ExtractPropTypes<typeof tabsProps>
 
 const isPaneName = (value: unknown): value is string | number =>

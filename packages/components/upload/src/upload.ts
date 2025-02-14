@@ -108,7 +108,7 @@ export const uploadBaseProps = buildProps({
       | Awaitable<UploadData>
       | ((rawFile: UploadRawFile) => Awaitable<UploadData>)
     >([Object, Function, Promise]),
-    default: () => mutable({} as const),
+    default: () => ({}),
   },
   /**
    * @description whether uploading multiple files is permitted
@@ -148,7 +148,7 @@ export const uploadBaseProps = buildProps({
    */
   fileList: {
     type: definePropType<UploadUserFile[]>(Array),
-    default: () => mutable([] as const),
+    default: () => [],
   },
   /**
    * @description whether to auto upload file
@@ -180,7 +180,7 @@ export const uploadBaseProps = buildProps({
    * @description maximum number of uploads allowed
    */
   limit: Number,
-} as const)
+})
 
 export const uploadProps = buildProps({
   ...uploadBaseProps,
@@ -252,7 +252,7 @@ export const uploadProps = buildProps({
   crossorigin: {
     type: definePropType<'anonymous' | 'use-credentials' | ''>(String),
   },
-} as const)
+})
 
 export type UploadProps = ExtractPropTypes<typeof uploadProps>
 

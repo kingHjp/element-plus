@@ -13,7 +13,7 @@ export const tooltipV2TriggerProps = buildProps({
   onMouseDown: EventHandler,
   onMouseEnter: EventHandler,
   onMouseLeave: EventHandler,
-} as const)
+})
 
 export type TooltipV2TriggerProps = ExtractPropTypes<
   typeof tooltipV2TriggerProps

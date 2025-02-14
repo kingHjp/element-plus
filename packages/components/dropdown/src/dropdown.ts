@@ -139,7 +139,7 @@ export const dropdownProps = buildProps({
    * @description whether the dropdown popup is teleported to the body
    */
   teleported: useTooltipContentProps.teleported,
-} as const)
+})
 
 export const dropdownItemProps = buildProps({
   /**
@@ -164,7 +164,7 @@ export const dropdownItemProps = buildProps({
   icon: {
     type: iconPropType,
   },
-} as const)
+})
 
 export const dropdownMenuProps = buildProps({
   onKeydown: { type: definePropType<(e: KeyboardEvent) => void>(Function) },

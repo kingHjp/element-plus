@@ -1,15 +1,15 @@
 import { computed, inject, unref } from 'vue'
-import { buildProp } from '@element-plus/utils'
+import { defineEpProp } from '@element-plus/utils'
 import { componentSizes } from '@element-plus/constants'
 
 import type { InjectionKey, Ref } from 'vue'
 import type { ComponentSize } from '@element-plus/constants'
 
-export const useSizeProp = buildProp({
+export const useSizeProp = defineEpProp({
   type: String,
   values: componentSizes,
   required: false,
-} as const)
+})
 
 export const useSizeProps = {
   size: useSizeProp,

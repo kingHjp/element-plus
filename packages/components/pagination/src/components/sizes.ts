@@ -22,7 +22,7 @@ export const paginationSizesProps = buildProps({
     values: componentSizes,
   },
   appendSizeTo: String,
-} as const)
+})
 
 export type PaginationSizesProps = ExtractPropTypes<typeof paginationSizesProps>
 

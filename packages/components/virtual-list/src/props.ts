@@ -1,49 +1,42 @@
-import {
-  buildProp,
-  buildProps,
-  definePropType,
-  mutable,
-} from '@element-plus/utils'
+import { buildProps, defineEpProp, definePropType } from '@element-plus/utils'
 import { VERTICAL } from './defaults'
 
 import type { ExtractPropTypes, StyleValue } from 'vue'
 import type { GridItemKeyGetter, ItemSize } from './types'
 
-const itemSize = buildProp({
+const itemSize = defineEpProp({
   type: definePropType<number | ItemSize>([Number, Function]),
   required: true,
-} as const)
+})
 
-const estimatedItemSize = buildProp({
-  type: Number,
-} as const)
+const estimatedItemSize = defineEpProp({ type: Number })
 
-const cache = buildProp({
+const cache = defineEpProp({
   type: Number,
   default: 2,
-} as const)
+})
 
-const direction = buildProp({
+const direction = defineEpProp({
   type: String,
   values: ['ltr', 'rtl'],
   default: 'ltr',
-} as const)
+})
 
-const initScrollOffset = buildProp({
+const initScrollOffset = defineEpProp({
   type: Number,
   default: 0,
-} as const)
+})
 
-const total = buildProp({
+const total = defineEpProp({
   type: Number,
   required: true,
-} as const)
+})
 
-const layout = buildProp({
+const layout = defineEpProp({
   type: String,
   values: ['horizontal', 'vertical'],
   default: VERTICAL,
-} as const)
+})
 
 export const virtualizedProps = buildProps({
   className: {
@@ -58,7 +51,7 @@ export const virtualizedProps = buildProps({
 
   data: {
     type: definePropType<any[]>(Array),
-    default: () => mutable([] as const),
+    default: () => [],
   },
 
   /**
@@ -98,7 +91,7 @@ export const virtualizedProps = buildProps({
     type: Boolean,
     default: false,
   },
-} as const)
+})
 
 export const virtualizedListProps = buildProps({
   /**
@@ -123,15 +116,15 @@ export const virtualizedListProps = buildProps({
 
   itemSize,
   ...virtualizedProps,
-} as const)
+})
 
-const scrollbarSize = {
+const scrollbarSize = defineEpProp({
   type: Number,
   default: 6,
-} as const
+})
 
-const startGap = { type: Number, default: 0 } as const
-const endGap = { type: Number, default: 2 } as const
+const startGap = defineEpProp({ type: Number, default: 0 })
+const endGap = defineEpProp({ type: Number, default: 2 })
 
 export const virtualizedGridProps = buildProps({
   columnCache: cache,
@@ -160,7 +153,7 @@ export const virtualizedGridProps = buildProps({
   scrollbarEndGap: endGap,
   role: String,
   ...virtualizedProps,
-} as const)
+})
 
 export const virtualizedScrollbarProps = buildProps({
   alwaysOn: Boolean,
@@ -184,7 +177,7 @@ export const virtualizedScrollbarProps = buildProps({
   endGap,
 
   visible: Boolean,
-} as const)
+})
 
 export type VirtualizedProps = ExtractPropTypes<typeof virtualizedProps>
 export type VirtualizedListProps = ExtractPropTypes<typeof virtualizedListProps>

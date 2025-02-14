@@ -59,7 +59,7 @@ export const popperCoreConfigProps = buildProps({
     values: POSITIONING_STRATEGIES,
     default: 'absolute',
   },
-} as const)
+})
 export type PopperCoreConfigProps = ExtractPropTypes<
   typeof popperCoreConfigProps
 >
@@ -110,7 +110,7 @@ export const popperContentProps = buildProps({
   virtualTriggering: Boolean,
   zIndex: Number,
   ...useAriaProps(['ariaLabel']),
-} as const)
+})
 export type PopperContentProps = ExtractPropTypes<typeof popperContentProps>
 
 export const popperContentEmits = {

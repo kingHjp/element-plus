@@ -172,7 +172,7 @@ export const paginationProps = buildProps({
    * @description which element the size dropdown appends to.
    */
   appendSizeTo: String,
-} as const)
+})
 export type PaginationProps = ExtractPropTypes<typeof paginationProps>
 
 export const paginationEmits = {

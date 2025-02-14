@@ -59,7 +59,7 @@ export const timelineItemProps = buildProps({
    * @description icon is hollow
    */
   hollow: Boolean,
-} as const)
+})
 export type TimelineItemProps = ExtractPropTypes<typeof timelineItemProps>
 
 export type TimelineItemInstance = InstanceType<typeof TimelineItem>
